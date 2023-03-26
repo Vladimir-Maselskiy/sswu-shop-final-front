@@ -1,3 +1,4 @@
+import { CartNav } from '../CartNav/CartNav';
 import { Container } from '../Container/Container';
 import { HeaderNav } from '../HeaderNav/HeaderNav';
 import { Logo } from '../Logo/Logo';
@@ -11,6 +12,7 @@ export const Header = () => {
         <Logo />
         <HeaderNav />
         <SearchBar />
+        <CartNav />
       </>
     </Container>
   );

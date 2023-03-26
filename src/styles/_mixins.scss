@@ -1,4 +1,7 @@
 @mixin getRoundIconButton($size, $bgColor, $url) {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   width: $size;
   height: $size;
   border-radius: 50%;
