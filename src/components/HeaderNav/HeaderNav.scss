@@ -1,0 +1,42 @@
+@import '../../styles/variables';
+@import '../../styles//base';
+
+.header-burger {
+  display: none;
+}
+.header-nav-block {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 564px;
+}
+.header-nav__item {
+  position: relative;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  color: $first-text-color;
+  cursor: pointer;
+  transition: scale 0.08s;
+  &.styled-arrow ::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 6px;
+    background-image: url('../../images/arrow-down-icon.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    right: -15px;
+    top: 50%;
+  }
+
+  &:hover {
+    scale: 1.1;
+  }
+}

@@ -1,0 +1,57 @@
+@import './variables';
+
+.section {
+  width: 100%;
+}
+
+.container {
+  max-width: 1920px;
+  min-width: 440px;
+  margin: 0 auto;
+  padding-left: 162px;
+  padding-right: 162px;
+}
+
+.section-title {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.38;
+  color: $first-text-color;
+}
+
+.section-message {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 72px;
+  line-height: 1.08;
+  color: $second-text-color;
+}
+.section-description {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.67;
+  color: $third-text-color;
+}
+.section-button {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2.67;
+  padding-left: 30px;
+  padding-right: 30px;
+  background-color: $first-accent-color;
+  color: $white-color;
+  border: none;
+  border-radius: 15px 0px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.logo {
+  min-width: 150.76px;
+  height: 46.04px;
+  background-repeat: no-repeat;
+  background-image: url('../images/logo.png');
+  background-size: contain;
+}

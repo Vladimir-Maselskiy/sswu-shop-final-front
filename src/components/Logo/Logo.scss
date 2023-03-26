@@ -1,0 +1,5 @@
+@import '../../styles//base';
+
+.header-logo {
+  @extend .logo;
+}

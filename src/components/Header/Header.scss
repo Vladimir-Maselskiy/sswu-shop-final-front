@@ -1,0 +1,9 @@
+@import '../../styles/variables';
+@import '../../styles//base';
+
+.header-section {
+  @extend .section;
+  position: sticky;
+  top: -70px;
+  z-index: 2;
+}
