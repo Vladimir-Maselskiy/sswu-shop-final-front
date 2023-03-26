@@ -1,5 +1,6 @@
 @import '../../styles/variables';
 @import '../../styles//base';
+@import '../../styles/mixins';
 
 .header-search-bar {
   position: relative;
@@ -15,21 +16,26 @@
   font-size: 22px;
   line-height: 3;
   border: none;
-  background-color: $first-background-color;
+  background-color: $second-background-color;
   padding-left: 40px;
   padding-right: 80px;
 }
 .header-search-icon {
+  @include getRoundIconButton(
+    56px,
+    $first-background-color,
+    '../../images/search.svg'
+  );
   position: absolute;
   top: 50%;
   right: 6px;
   transform: translateY(-50%);
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background-color: red;
-  background-image: url('../../images/search.svg');
-  background-position: center;
-  background-repeat: no-repeat;
-  cursor: pointer;
+  //   width: 56px;
+  //   height: 56px;
+  //   border-radius: 50%;
+  //   background-color: red;
+  //   background-image: url('../../images/search.svg');
+  //   background-position: center;
+  //   background-repeat: no-repeat;
+  //   cursor: pointer;
 }

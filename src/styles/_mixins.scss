@@ -1,0 +1,10 @@
+@mixin getRoundIconButton($size, $bgColor, $url) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  background-color: $bgColor;
+  background-image: url($url);
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
