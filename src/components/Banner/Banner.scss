@@ -1,0 +1,76 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+@import '../../styles//base';
+
+.banner-section {
+  @extend .section;
+}
+
+.banner-container {
+  @extend .container;
+  position: relative;
+  background: url('../../images/banner-patterns.png'),
+    url('../../images/banner-image.png');
+  background-size: contain;
+  background-color: $sixth-background-color;
+  background-blend-mode: multiply;
+}
+
+.banner-info {
+  width: 28%;
+  position: absolute;
+  top: 50%;
+  left: 14%;
+  transform: translateY(-50%);
+}
+
+.banner-info__title {
+  @extend .section-title;
+}
+
+.banner-info__message {
+  @extend .section-message;
+  font-size: 70px;
+}
+.banner-info__button {
+  @include getButtonWithArrow($third-background-color, $first-accent-color);
+}
+
+@media screen and (max-width: 1440px) {
+  .banner-info__title {
+    font-size: 24px;
+  }
+  .banner-info__message {
+    font-size: 50px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .banner-info__title {
+    font-size: 18px;
+  }
+  .banner-info__message {
+    font-size: 30px;
+  }
+  .banner-info__button {
+    margin-top: 5px;
+    padding: 14px 48px 14px 19px;
+    border-radius: 10px;
+    font-size: 14px;
+    &::after {
+      right: 15px;
+    }
+  }
+}
+@media screen and (max-width: 556px) {
+  .banner-info__title {
+    font-size: 14px;
+  }
+  .banner-info__message {
+    font-size: 16px;
+  }
+  .banner-info__button {
+    padding: 10px 40px 10px 11px;
+    border-radius: 5px;
+    font-size: 11px;
+  }
+}

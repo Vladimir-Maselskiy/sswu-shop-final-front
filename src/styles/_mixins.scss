@@ -11,3 +11,30 @@
   background-repeat: no-repeat;
   cursor: pointer;
 }
+@mixin getButtonWithArrow($bgColor, $textColor) {
+  position: relative;
+  margin-top: 23px;
+  padding: 28px 68px 28px 39px;
+  border: none;
+  border-radius: 16px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  color: $textColor;
+  background-color: $bgColor;
+  cursor: pointer;
+  &::after {
+    position: absolute;
+    top: 50%;
+    right: 39px;
+    transform: translateY(-50%);
+    content: '';
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    background-color: $textColor;
+    background-image: url('../images/arrow-for-button.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}

@@ -1,10 +1,12 @@
 import './App.scss';
+import { Banner } from './Banner/Banner';
 import { Header } from './Header/Header';
 
 function App() {
   return (
     <>
-      <Header></Header>
+      <Header />
+      <Banner />
     </>
   );
 }

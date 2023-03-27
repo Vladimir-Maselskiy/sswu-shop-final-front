@@ -8,7 +8,7 @@ import './Header.scss';
 
 export const Header = () => {
   return (
-    <Container className="header-container">
+    <Container className="header">
       <>
         <Logo />
         <HeaderNav />

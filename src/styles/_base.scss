@@ -2,30 +2,29 @@
 
 .section {
   width: 100%;
+  min-width: 440px;
 }
 
 .container {
   max-width: 1920px;
-  min-width: 440px;
   margin: 0 auto;
   padding-left: 162px;
   padding-right: 162px;
 }
 
 .section-title {
+  font-family: Yellowtail;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 1.38;
+  font-size: 36px;
+  line-height: 1.36;
   color: $first-text-color;
 }
 
 .section-message {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 72px;
-  line-height: 1.08;
-  color: $second-text-color;
+  font-weight: 800;
+  font-size: 50px;
+  line-height: 1.18;
+  color: $first-accent-color;
 }
 .section-description {
   font-style: normal;
@@ -60,4 +59,17 @@
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 1655px) {
+  .container {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+@media screen and (max-width: 498px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
