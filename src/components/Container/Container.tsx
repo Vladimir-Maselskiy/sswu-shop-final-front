@@ -1,5 +1,3 @@
-import './Container.scss';
-
 type TProps = {
   children: JSX.Element;
   className: string;

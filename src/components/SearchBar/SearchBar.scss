@@ -31,3 +31,14 @@
   right: 6px;
   transform: translateY(-50%);
 }
+
+@media screen and (max-width: 1440px) {
+  .header-search-bar {
+    width: 200px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .header-search-bar {
+    width: 150px;
+  }
+}

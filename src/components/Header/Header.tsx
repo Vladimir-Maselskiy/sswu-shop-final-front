@@ -1,3 +1,4 @@
+import { Box } from '../Box/Box';
 import { CartNav } from '../CartNav/CartNav';
 import { Container } from '../Container/Container';
 import { HeaderNav } from '../HeaderNav/HeaderNav';
@@ -11,8 +12,12 @@ export const Header = () => {
       <>
         <Logo />
         <HeaderNav />
-        <SearchBar />
-        <CartNav />
+        <Box className="header-right-box">
+          <>
+            <SearchBar />
+            <CartNav />
+          </>
+        </Box>
       </>
     </Container>
   );
