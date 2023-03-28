@@ -1,0 +1,78 @@
+@import '../../styles/variables';
+@import '../../styles//base';
+
+.offer-banner-section {
+  @extend .section;
+  padding-top: 154px;
+  padding-bottom: 190px;
+}
+
+.offer-banner-container {
+  @extend .container;
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+}
+.offer-banner-item {
+  position: relative;
+  width: 44%;
+  background-size: cover;
+  border-radius: 30px;
+  &:nth-child(1) {
+    background-image: url('../../images/offer-banner-1.jpg');
+    & p {
+      color: $white-color;
+    }
+  }
+  &:nth-child(2) {
+    background-image: url('../../images/offer-banner-2.jpg');
+  }
+}
+
+.offer-banner-item__box {
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  transform: translateY(-50%);
+  width: 40%;
+}
+.offer-banner-info__title {
+  @extend .section-title;
+}
+.offer-banner-info__message {
+  @extend .section-message;
+  font-size: 40px;
+}
+
+@media screen and (max-width: 1440px) {
+  .offer-banner-info__title {
+    font-size: 24px;
+  }
+  .offer-banner-info__message {
+    font-size: 32px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .offer-banner-info__title {
+    font-size: 18px;
+  }
+  .offer-banner-info__message {
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .offer-banner-info__title {
+    font-size: 14px;
+  }
+  .offer-banner-info__message {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 650px) {
+  .offer-banner-info__title {
+    font-size: 10px;
+  }
+  .offer-banner-info__message {
+    font-size: 12px;
+  }
+}
