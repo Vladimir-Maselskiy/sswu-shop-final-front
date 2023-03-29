@@ -11,7 +11,6 @@ export const About = () => {
       styles={{ height: Math.max(windowWidth * 0.56, 246) }}
     >
       <>
-        <div className="about-background-tumb"></div>
         <div className="about-info">
           <p className="about-info__title">About Us</p>
           <p className="about-info__message">
