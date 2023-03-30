@@ -1,0 +1,124 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+@import '../../styles//base';
+
+.feedback-section {
+  @extend .section;
+  background-color: $fifth-background-color;
+}
+
+.feedback-container {
+  @extend .container;
+  max-height: 1267px;
+  padding-top: 164px;
+  padding-bottom: 164px;
+  background: url('../../images/feedback-bg.png');
+  background-size: cover;
+  background-color: $eighth-background-color;
+}
+
+.feedback-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.feedback__title {
+  @extend .section-title;
+}
+
+.feedback__message {
+  @extend .section-message;
+  margin-top: 8px;
+}
+
+.slider-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.slider-item__avatar {
+  width: 115px;
+  height: 115px;
+  border-radius: 50%;
+}
+.slider-item__star-rate-container {
+  display: flex;
+  margin-top: 20px;
+}
+.slider-item__star-item {
+  width: 26px;
+  height: 26px;
+  background-image: url('../../images//star-rate.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.slider-item__description {
+  @extend .section-description;
+  margin-top: 25px;
+  text-align: center;
+}
+
+.slider-item__user-name {
+  @extend .section-message;
+  font-weight: 600;
+  font-size: 25px;
+  margin-top: 20px;
+}
+.slider-item__user-status {
+  @extend .section-description;
+}
+
+.slider-item__bullets-container {
+  display: flex;
+  justify-content: space-between;
+  width: 35px;
+  margin-top: 19px;
+}
+.slider-item__bullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: $fifth-text-color;
+  &.activ {
+    background-color: $first-background-color;
+  }
+}
+.feedback__advantage-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 102px;
+  width: 100%;
+}
+
+.feedback-divider {
+  width: 100%;
+  height: 1px;
+  background-color: $fifth-background-color;
+  margin-top: 102px;
+}
+
+.feedback__advantage-item-outline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 211px;
+  height: 211px;
+  border-radius: 50%;
+  border: 5px solid $first-background-color;
+}
+
+.feedback__advantage-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  height: 95%;
+  border-radius: 50%;
+  background-color: $ninth-background-color;
+}

@@ -12,7 +12,7 @@ export const Header = () => {
       <>
         <Logo />
         <HeaderNav />
-        <Box className="header-right-box">
+        <Box className="header-right">
           <>
             <SearchBar />
             <CartNav />

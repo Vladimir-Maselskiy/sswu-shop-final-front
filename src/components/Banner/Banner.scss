@@ -4,15 +4,16 @@
 
 .banner-section {
   @extend .section;
+  background-color: $sixth-background-color;
 }
 
 .banner-container {
   @extend .container;
   position: relative;
   background: url('../../images/banner-patterns.png'),
-    url('../../images/banner-image.png');
-  background-size: contain;
-  background-color: $sixth-background-color;
+    url('../../images/banner-image.png'), $sixth-background-color;
+  max-height: 898px;
+  background-size: cover;
   background-blend-mode: multiply;
 }
 

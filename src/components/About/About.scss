@@ -4,18 +4,18 @@
 
 .about-section {
   @extend .section;
+  background-color: $third-text-color;
 }
 
 .about-container {
   @extend .container;
   position: relative;
-  padding-top: 87px;
-  padding-bottom: 113px;
+  padding-top: 186px;
+  padding-bottom: 199px;
   background: url('../../images/about-image.png');
   background-size: 42%;
   background-repeat: no-repeat;
   background-position: left 100px center;
-  background-color: $third-text-color;
 }
 
 .about-info {
@@ -95,6 +95,7 @@
   .about-container {
     background-size: 35%;
     background-position: left 20px center;
+    padding-top: 100px;
   }
   .about-info {
     width: 60%;
