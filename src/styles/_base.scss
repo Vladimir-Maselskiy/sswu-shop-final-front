@@ -68,6 +68,44 @@
     padding-right: 50px;
   }
 }
+
+@media screen and (max-width: 1195px) {
+  .section-message {
+    font-size: 40px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .section-title {
+    font-size: 24px;
+  }
+  .section-message {
+    font-size: 36px;
+  }
+  .section-button {
+    margin-top: 25px;
+  }
+}
+@media screen and (max-width: 635px) {
+  .section-title {
+    font-size: 20px;
+  }
+  .section-message {
+    font-size: 30px;
+  }
+  .sesction-button {
+    margin-top: 15px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .section-title {
+    font-size: 16px;
+  }
+  .section-message {
+    font-size: 24px;
+  }
+}
+
 @media screen and (max-width: 498px) {
   .container {
     padding-left: 20px;

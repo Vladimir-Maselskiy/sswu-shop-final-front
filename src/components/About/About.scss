@@ -146,15 +146,6 @@
 }
 
 @media screen and (max-width: 767px) {
-  .about-info__title {
-    font-size: 24px;
-  }
-  .about-info__message {
-    font-size: 36px;
-  }
-  .about-info__button {
-    margin-top: 25px;
-  }
   .about-info__description {
     display: none;
   }
@@ -162,25 +153,5 @@
 @media screen and (max-width: 635px) {
   .about-container {
     padding-top: 50px;
-  }
-  .about-info__title {
-    font-size: 20px;
-  }
-  .about-info__message {
-    font-size: 30px;
-  }
-  .about-info__button {
-    margin-top: 15px;
-  }
-}
-@media screen and (max-width: 550px) {
-  .about-info__title {
-    font-size: 16px;
-  }
-  .about-info__message {
-    font-size: 24px;
-  }
-  .about-info__button {
-    margin-top: 15px;
   }
 }

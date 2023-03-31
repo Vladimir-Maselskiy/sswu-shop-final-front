@@ -19,7 +19,7 @@ export const FeedBacks = () => {
   return (
     <Container
       className="feedback"
-      styles={{ height: Math.max(windowWidth * 0.66, 246) }}
+      styles={{ height: Math.max(windowWidth * 0.66, 290) }}
     >
       <Box className="feedback">
         <>
