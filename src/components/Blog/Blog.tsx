@@ -11,12 +11,15 @@ export const Blog = () => {
       styles={{ height: Math.max(windowWidth / 2.138, 206) }}
     >
       <>
-        <p className="blog-title">News</p>
-        <p className="blog-message">
-          Discover weekly content about organic food, & more
-        </p>
+        <p className="blog__title">News</p>
+        <div className="blog__message-box">
+          <p className="blog__message">
+            Discover weekly content about organic food, & more
+          </p>
+          <button className="blog__more-news-button">More News</button>
+        </div>
 
-        <Box className="blog-content">
+        <Box className="blog__content">
           <>
             <div className="blog__item">
               <div className="blog__item-image">
