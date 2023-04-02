@@ -3,8 +3,8 @@ import './App.scss';
 import { Banner } from './Banner/Banner';
 import { FeedBacks } from './FeedBacks/FeedBacks';
 import { Header } from './Header/Header';
+import { Offer } from './Offer/Offer';
 import { OfferBanner } from './OfferBanner/OfferBanner';
-import { Products } from './Products/Products';
 
 function App() {
   return (
@@ -13,8 +13,9 @@ function App() {
       <Banner />
       <OfferBanner />
       <About />
-      <Products />
+      {/* <Products /> */}
       <FeedBacks />
+      <Offer />
     </>
   );
 }

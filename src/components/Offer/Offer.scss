@@ -1,0 +1,31 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+@import '../../styles//base';
+@import '../ProductCard/ProductCard.scss';
+
+.offer-section {
+  @extend .section;
+  background-color: $first-accent-color;
+  padding-top: 201px;
+  padding-bottom: 200px;
+}
+
+.offer-container {
+  padding-left: 260px;
+  padding-right: 260px;
+  margin: 0 auto;
+}
+
+.offer__title {
+  @extend .section-title;
+}
+
+.offer__message {
+  @extend .section-message;
+  color: $white-color;
+}
+.offer__product-card {
+  @extend .product-card;
+  background-color: $white-color;
+  margin-top: 50px;
+}

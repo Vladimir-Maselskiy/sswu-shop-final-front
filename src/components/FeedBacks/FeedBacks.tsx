@@ -5,10 +5,10 @@ import { Container } from '../Container/Container';
 import avatar from '../../images/feedback-slider-user.png';
 import './FeedBacks.scss';
 import clsx from 'clsx';
+import { StarRate } from '../StarRate/StarRate';
 
 export const FeedBacks = () => {
   const { windowWidth } = useWindowWidth();
-  const starsItems = new Array(5).fill(null);
   const bulletItems = new Array(3).fill(null);
   const advantageItems = [
     { value: '100%', name: 'Organic' },
@@ -27,18 +27,11 @@ export const FeedBacks = () => {
           <p className="feedback__message">What Our Customer Saying?</p>
           <div className="feedback slider-item">
             <img
-              //   src="../../images/feedback-slider-user.png"
               src={avatar}
               alt="sara-teylor-avatar"
               className="slider-item__avatar"
             />
-            <div className="slider-item__star-rate-container">
-              {starsItems.map((_, index) => {
-                return (
-                  <div key={index} className="slider-item__star-item"></div>
-                );
-              })}
-            </div>
+            <StarRate className="slider-item" rate={5} />
             <p className="slider-item__description">
               Simply dummy text of the printing and typesetting industry. Lorem
               Ipsum simply dummy text of the printing and typesetting industry.

@@ -1,6 +1,7 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
 @import '../../styles//base';
+@import '../StarRate/StarRate.scss';
 
 .feedback-section {
   @extend .section;
@@ -51,15 +52,10 @@
   border-radius: 50%;
 }
 .slider-item__star-rate-container {
-  display: flex;
-  margin-top: 20px;
+  @extend .star-rate-container;
 }
 .slider-item__star-item {
-  width: 26px;
-  height: 26px;
-  background-image: url('../../images//star-rate.svg');
-  background-position: center;
-  background-repeat: no-repeat;
+  @extend .star-item;
 }
 .slider-item__description {
   @extend .section-description;
@@ -103,9 +99,8 @@
 }
 
 .feedback-divider {
-  width: 100%;
-  height: 1px;
-  background-color: $fifth-background-color;
+  @extend .divider;
+
   margin-top: 102px;
 }
 
