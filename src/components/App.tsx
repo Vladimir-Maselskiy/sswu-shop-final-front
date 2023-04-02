@@ -1,6 +1,7 @@
 import { About } from './About/About';
 import './App.scss';
 import { Banner } from './Banner/Banner';
+import { Blog } from './Blog/Blog';
 import { EcoFriendly } from './EcoFriendly/EcoFriendly';
 import { FeedBacks } from './FeedBacks/FeedBacks';
 import { Gallery } from './Gallery/Gallery';
@@ -20,6 +21,7 @@ function App() {
       <Offer />
       <EcoFriendly />
       <Gallery />
+      <Blog />
     </>
   );
 }
