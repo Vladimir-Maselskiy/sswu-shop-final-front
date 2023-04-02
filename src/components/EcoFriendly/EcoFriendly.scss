@@ -1,0 +1,74 @@
+@import '../../styles/variables';
+@import '../../styles//base';
+
+.eco-friendly-section {
+  @extend .section;
+  background-color: $fifth-background-color;
+  //
+}
+
+.eco-friendly-container {
+  @extend .container;
+  position: relative;
+  max-height: 931px;
+  background: url('../../images/eco-friendly-bg.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: $eighth-background-color;
+}
+.eco-friendly__info {
+  position: absolute;
+  top: 10%;
+  left: 45%;
+  width: 800px;
+  background-color: $white-color;
+  border-radius: 30px;
+  padding: 78px 89px;
+}
+
+.eco-friendly__title {
+  @extend .section-title;
+}
+
+.eco-friendly__message {
+  @extend .section-message;
+}
+
+.eco-friendly__list {
+  margin-top: 35px;
+}
+
+.eco-friendly__item:not(:first-child) {
+  margin-top: 35px;
+}
+
+.eco-friendly__item-title {
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 1.16;
+  color: $first-accent-color;
+}
+
+.eco-friemdly__item-description {
+  @extend .section-description;
+}
+
+@media screen and (max-width: 1630px) {
+  .eco-friendly__info {
+    top: 50px;
+    left: auto;
+    right: 50px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .eco-friendly-container {
+    background-size: cover;
+    padding-top: 50px;
+  }
+  .eco-friendly__info {
+    position: static;
+    width: 100%;
+    max-height: 650px;
+    overflow-y: scroll;
+  }
+}

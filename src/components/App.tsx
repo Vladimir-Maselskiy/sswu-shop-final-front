@@ -1,6 +1,7 @@
 import { About } from './About/About';
 import './App.scss';
 import { Banner } from './Banner/Banner';
+import { EcoFriendly } from './EcoFriendly/EcoFriendly';
 import { FeedBacks } from './FeedBacks/FeedBacks';
 import { Header } from './Header/Header';
 import { Offer } from './Offer/Offer';
@@ -16,6 +17,7 @@ function App() {
       {/* <Products /> */}
       <FeedBacks />
       <Offer />
+      <EcoFriendly />
     </>
   );
 }
