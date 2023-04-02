@@ -11,6 +11,7 @@
 }
 
 .offer-container {
+  @extend .container;
   padding-left: 260px;
   padding-right: 260px;
   margin: 0 auto;
@@ -24,8 +25,62 @@
   @extend .section-message;
   color: $white-color;
 }
+.offer-cards-box {
+  display: flex;
+  margin-top: 50px;
+  gap: 20px;
+}
 .offer__product-card {
   @extend .product-card;
   background-color: $white-color;
-  margin-top: 50px;
+}
+
+@media screen and (max-width: 1920px) {
+  .offer-container {
+    padding: 160px;
+  }
+}
+@media screen and (max-width: 1720px) {
+  .offer-container {
+    padding: 80px;
+  }
+}
+@media screen and (max-width: 1560px) {
+  .offer-cards-box {
+    display: grid;
+    grid-template-columns: repeat(2, 335px);
+  }
+  .offer-container {
+    padding: 260px;
+  }
+}
+@media screen and (max-width: 1211px) {
+  .offer-container {
+    padding: 160px;
+  }
+}
+@media screen and (max-width: 1011px) {
+  .offer-container {
+    padding: 80px;
+  }
+}
+@media screen and (max-width: 850px) {
+  .offer-cards-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .offer-container {
+    padding: 160px;
+  }
+}
+@media screen and (max-width: 782px) {
+  .offer-container {
+    padding: 80px;
+  }
+}
+@media screen and (max-width: 782px) {
+  .offer-container {
+    padding: 50px;
+  }
 }

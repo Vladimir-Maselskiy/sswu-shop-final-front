@@ -10,8 +10,11 @@ export const Offer = () => {
       <>
         <p className="offer__title">Offer</p>
         <p className="offer__message">We Offer Organic For You</p>
-        <Box className="cards">
+        <Box className="offer-cards">
           <>
+            <ProductCard className="offer" />
+            <ProductCard className="offer" />
+            <ProductCard className="offer" />
             <ProductCard className="offer" />
           </>
         </Box>
