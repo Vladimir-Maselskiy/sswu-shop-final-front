@@ -9,16 +9,21 @@ import { Newsletter } from '../Newsletter/Newsletter';
 import { Offer } from '../Offer/Offer';
 import { OfferBanner } from '../OfferBanner/OfferBanner';
 import { Products } from '../Products/Products';
+import { IProduct } from '../../interfaces/interfaces';
 
-export const MainPage = () => {
+type TProps = {
+  products: IProduct[];
+};
+
+export const MainPage = ({ products }: TProps) => {
   return (
     <>
       <Banner />
       <OfferBanner />
       <About />
-      <Products />
+      <Products products={products}/>
       <FeedBacks />
-      <Offer />
+      <Offer products={products}/>
       <EcoFriendly />
       <Gallery />
       <Blog />

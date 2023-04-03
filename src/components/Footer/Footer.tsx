@@ -53,7 +53,9 @@ export const Footer = () => {
             <div className="footer__pages-box">
               <p className="footer__pages-title">Utility Pages</p>
               {pagesItems.map(item => (
-                <p className="footer__pages-item">{item}</p>
+                <p key={item} className="footer__pages-item">
+                  {item}
+                </p>
               ))}
             </div>
           </>

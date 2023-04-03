@@ -3,16 +3,32 @@
 @import '../../styles//base';
 @import '../ProductCard/ProductCard.scss';
 
-.offer-section {
+.products-section {
   @extend .section;
-  background-color: $first-accent-color;
   padding-top: 201px;
   padding-bottom: 200px;
 }
 
-.offer-container {
+.products-container {
   @extend .container;
   padding-left: 260px;
   padding-right: 260px;
   margin: 0 auto;
+}
+
+.products__title {
+  @extend .section-title;
+  text-align: center;
+}
+
+.products__message {
+  @extend .section-message;
+  text-align: center;
+}
+
+.products-cards-box {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  gap: 20px;
 }

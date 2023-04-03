@@ -1,26 +1,35 @@
+import { IProduct } from '../../interfaces/interfaces';
 import { StarRate } from '../StarRate/StarRate';
 
 type TProps = {
   className: string;
+  product: IProduct;
 };
 
-export const ProductCard = ({ className }: TProps) => {
+export const ProductCard = ({ className, product }: TProps) => {
+  const { group, image, name, price, discount, rate } = product;
+  const priceWithDiscount =
+    discount > 0 ? (price * (1 - discount / 100)).toFixed(2) : null;
   return (
     <div className={`${className}__product-card`}>
-      <p className="product-card__group">Vegetable</p>
+      <p className="product-card__group">{group}</p>
       <img
         className="product-card__image"
-        src="products/mung_bean.png"
-        alt="Mung Bean"
+        src={`products${image}`}
+        alt={name}
       />
-      <p className="product-card__name">Mung Bean</p>
+      <p className="product-card__name">{name}</p>
       <div className="product-card__divider"></div>
       <div className="product-card__footer">
         <div className="product-card__price-box">
-          <p className="product-card__full-price">$20.00</p>
-          <p className="product-card__sales-price">$11.00</p>
+          {!priceWithDiscount && (
+            <p className="product-card__full-price">{price}</p>
+          )}
+          <p className="product-card__sales-price">
+            {priceWithDiscount || price}
+          </p>
         </div>
-        <StarRate className="product-card" rate={2.9} />
+        <StarRate className="product-card" rate={rate} />
       </div>
     </div>
   );
