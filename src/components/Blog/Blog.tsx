@@ -4,12 +4,8 @@ import { Container } from '../Container/Container';
 import './Blog.scss';
 
 export const Blog = () => {
-  const { windowWidth } = useWindowWidth();
   return (
-    <Container
-      className="blog"
-      styles={{ height: Math.max(windowWidth / 2.138, 206) }}
-    >
+    <Container className="blog">
       <>
         <p className="blog__title">News</p>
         <div className="blog__message-box">

@@ -6,6 +6,7 @@ import { EcoFriendly } from './EcoFriendly/EcoFriendly';
 import { FeedBacks } from './FeedBacks/FeedBacks';
 import { Gallery } from './Gallery/Gallery';
 import { Header } from './Header/Header';
+import { Newsletter } from './Newsletter/Newsletter';
 import { Offer } from './Offer/Offer';
 import { OfferBanner } from './OfferBanner/OfferBanner';
 
@@ -22,6 +23,7 @@ function App() {
       <EcoFriendly />
       <Gallery />
       <Blog />
+      <Newsletter />
     </>
   );
 }
