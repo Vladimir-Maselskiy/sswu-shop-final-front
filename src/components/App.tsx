@@ -4,6 +4,7 @@ import { Banner } from './Banner/Banner';
 import { Blog } from './Blog/Blog';
 import { EcoFriendly } from './EcoFriendly/EcoFriendly';
 import { FeedBacks } from './FeedBacks/FeedBacks';
+import { Footer } from './Footer/Footer';
 import { Gallery } from './Gallery/Gallery';
 import { Header } from './Header/Header';
 import { Newsletter } from './Newsletter/Newsletter';
@@ -24,6 +25,7 @@ function App() {
       <Gallery />
       <Blog />
       <Newsletter />
+      <Footer />
     </>
   );
 }

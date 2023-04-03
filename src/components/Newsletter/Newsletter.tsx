@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useWindowWidth } from '../../hooks/getWindowWidth';
 import { Container } from '../Container/Container';
 import './Newsletter.scss';
 

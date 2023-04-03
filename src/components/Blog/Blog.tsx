@@ -1,4 +1,3 @@
-import { useWindowWidth } from '../../hooks/getWindowWidth';
 import { Box } from '../Box/Box';
 import { Container } from '../Container/Container';
 import './Blog.scss';

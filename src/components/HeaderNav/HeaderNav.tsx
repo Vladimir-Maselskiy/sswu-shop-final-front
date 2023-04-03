@@ -35,7 +35,7 @@ export const HeaderNav = () => {
               'styled-arrow': item === 'Pages',
             })}
           >
-            <a href="">{item}</a>
+            <a href="/">{item}</a>
           </li>
         ))}
       </ul>
