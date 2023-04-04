@@ -14,6 +14,7 @@ export const Products = ({ products }: TProps) => {
   const [visibleProducts, setVisibleProducts] = useState<IProduct[]>([]);
   const [isShowWithDiscount, setIsShowWithDiscount] = useState(false);
   const [isShowModal, setIsShowModal] = useState(false);
+  const [currentProduct, setCurrentProduct] = useState<IProduct | null>(null);
 
   useEffect(() => {
     if (isShowWithDiscount) {
@@ -36,12 +37,16 @@ export const Products = ({ products }: TProps) => {
                 product={product}
                 className="products"
                 setIsShowModal={setIsShowModal}
+                setCurrentProduct={setCurrentProduct}
               />
             ))}
           </>
         </Box>
         {isShowModal && (
-          <ProductModal product={products[0]} setIsShowModal={setIsShowModal} />
+          <ProductModal
+            product={currentProduct}
+            setIsShowModal={setIsShowModal}
+          />
         )}
       </>
     </Container>
