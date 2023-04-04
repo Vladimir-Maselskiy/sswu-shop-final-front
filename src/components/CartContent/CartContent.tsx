@@ -13,7 +13,7 @@ export const CartContent = ({ order, setOrder }: TProps) => {
     <Container className="cart-content">
       <>
         {order.map(item => (
-          <CartItem key={item.product._id} item={item}></CartItem>
+          <CartItem key={item.product._id} item={item} />
         ))}
       </>
     </Container>

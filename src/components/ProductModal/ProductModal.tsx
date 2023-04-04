@@ -106,7 +106,7 @@ export const ProductModal = ({ product, setIsShowModal, setOrder }: TProps) => {
           <div className="modal__main-box">
             <div className="modal__image-box">
               <img
-                src={`products${image}`}
+                src={`../products${image}`}
                 alt={name}
                 className="modal__image"
               />

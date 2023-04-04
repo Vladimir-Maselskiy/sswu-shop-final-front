@@ -28,7 +28,7 @@ export const ProductCard = ({
       <p className="product-card__group">{group}</p>
       <img
         className="product-card__image"
-        src={`products${image}`}
+        src={`../products${image}`}
         alt={name}
       />
       <p className="product-card__name">{name}</p>
