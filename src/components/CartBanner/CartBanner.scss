@@ -1,0 +1,23 @@
+@import '../../styles/variables';
+@import '../../styles//base';
+
+.cart-banner-section {
+  @extend .section;
+}
+
+.cart-banner-container {
+  @extend .container;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('../../images/cart-banner-pattern.png'),
+    url('../../images/cart-banner.png');
+  background-size: cover;
+  height: 450px;
+}
+
+.cart-banner__title {
+  @extend .section-message;
+  font-weight: 800;
+  font-size: 70px;
+}

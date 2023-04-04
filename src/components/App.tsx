@@ -22,7 +22,10 @@ function App() {
           path="/"
           element={<MainPage products={products} setOrder={setOrder} />}
         ></Route>
-        <Route path="/cart" element={<Cart />}></Route>
+        <Route
+          path="/cart"
+          element={<Cart order={order} setOrder={setOrder} />}
+        ></Route>
       </Routes>
 
       <Footer />

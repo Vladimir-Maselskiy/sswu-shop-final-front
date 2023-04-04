@@ -1,0 +1,10 @@
+@import '../../styles/variables';
+@import '../../styles//base';
+
+.cart-section {
+  @extend .section;
+}
+
+.cart-container {
+  @extend .container;
+}

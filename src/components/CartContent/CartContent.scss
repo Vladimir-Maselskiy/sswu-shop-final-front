@@ -1,0 +1,15 @@
+@import '../../styles/variables';
+@import '../../styles//base';
+
+.cart-content-section {
+  @extend .section;
+  padding-top: 140px;
+}
+
+.cart-content-container {
+  @extend .container;
+  display: flex;
+  flex-direction: column;
+  background-color: $eleventh-background-color;
+  height: 100px;
+}

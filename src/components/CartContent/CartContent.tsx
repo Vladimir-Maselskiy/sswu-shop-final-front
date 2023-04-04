@@ -1,19 +1,20 @@
 import React from 'react';
 import { IOrderItem } from '../../interfaces/interfaces';
-import { CartBanner } from '../CartBanner/CartBanner';
-import { CartContent } from '../CartContent/CartContent';
+import { CartItem } from '../CartItem/CartItem';
 import { Container } from '../Container/Container';
+import './CartContent.scss';
 
 type TProps = {
   order: IOrderItem[];
   setOrder: React.Dispatch<React.SetStateAction<IOrderItem[]>>;
 };
-export const Cart = ({ order, setOrder }: TProps) => {
+export const CartContent = ({ order, setOrder }: TProps) => {
   return (
-    <Container className="cart">
+    <Container className="cart-content">
       <>
-        <CartBanner />
-        <CartContent order={order} setOrder={setOrder} />
+        {order.map(item => (
+          <CartItem key={item.product._id} item={item}></CartItem>
+        ))}
       </>
     </Container>
   );
