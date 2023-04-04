@@ -9,6 +9,7 @@
   left: 0;
   top: 0;
   z-index: 1;
+  background: rgba(244, 244, 244, 0.82);
 }
 
 .modal-container {
@@ -24,6 +25,7 @@
   background-color: $white-color;
 }
 .modal__main-box {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(2, 50%);
   grid-template-areas:
@@ -177,6 +179,21 @@
   &::-webkit-scrollbar {
     display: none;
   }
+}
+
+.modal__close-button {
+  position: absolute;
+  top: 17px;
+  right: 0;
+  color: $white-color;
+  padding: 11px 26px;
+  background-color: $first-accent-color;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1920px) {

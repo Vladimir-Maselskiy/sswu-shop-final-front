@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { IProduct } from '../../interfaces/interfaces';
 import { Container } from '../Container/Container';
 import { StarRate } from '../StarRate/StarRate';
@@ -7,12 +7,35 @@ import './ProductModal.scss';
 
 type TProps = {
   product: IProduct;
+  setIsShowModal: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-export const ProductModal = ({ product }: TProps) => {
+export const ProductModal = ({ product, setIsShowModal }: TProps) => {
   const [descriptionButtton, setDescriptionButtton] = useState<
     'default' | 'additional'
   >('default');
+
+  const onBackDropClick = (e: any) => {
+    if (e.target instanceof HTMLDivElement) {
+      if (e.target.classList.value === 'modal-section') {
+        setIsShowModal(false);
+      }
+    }
+  };
+
+  const onKeyDownWithModal = (e: KeyboardEvent) => {
+    if (e.key === 'Escape') setIsShowModal(false);
+  };
+
+  useEffect(() => {
+    const rootRef = document.getElementById('root');
+    rootRef?.addEventListener('click', onBackDropClick);
+    window.addEventListener('keydown', onKeyDownWithModal);
+    return () => {
+      window.removeEventListener('keydown', onKeyDownWithModal);
+      rootRef?.removeEventListener('click', onBackDropClick);
+    };
+  }, []);
 
   const {
     image,
@@ -45,8 +68,10 @@ export const ProductModal = ({ product }: TProps) => {
     }
     const htmlEl = e.target.elements[0];
     if (htmlEl instanceof HTMLInputElement) console.log(htmlEl.value);
+  };
 
-    console.log(e.target.elements[0]);
+  const onCloseButtonClick = () => {
+    setIsShowModal(false);
   };
   return (
     <Container className="modal">
@@ -121,6 +146,13 @@ export const ProductModal = ({ product }: TProps) => {
               {descriptionButtton === 'default' ? description : additionalInfo}
             </p>
           </div>
+          <button
+            type="button"
+            className="modal__close-button"
+            onClick={onCloseButtonClick}
+          >
+            X
+          </button>
         </div>
       </>
     </Container>

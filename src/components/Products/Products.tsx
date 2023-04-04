@@ -40,7 +40,9 @@ export const Products = ({ products }: TProps) => {
             ))}
           </>
         </Box>
-        {isShowModal && <ProductModal product={products[0]} />}
+        {isShowModal && (
+          <ProductModal product={products[0]} setIsShowModal={setIsShowModal} />
+        )}
       </>
     </Container>
   );
