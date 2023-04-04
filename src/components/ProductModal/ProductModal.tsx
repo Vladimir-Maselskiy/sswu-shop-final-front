@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import React, { useState } from 'react';
 import { IProduct } from '../../interfaces/interfaces';
 import { Container } from '../Container/Container';
@@ -9,13 +10,44 @@ type TProps = {
 };
 
 export const ProductModal = ({ product }: TProps) => {
-  const [descriotionContent, setDescriotionContent] = useState(
-    product.description
-  );
-  const { image, group, name, rate, discount, price, mainProductInfo } =
-    product;
+  const [descriptionButtton, setDescriptionButtton] = useState<
+    'default' | 'additional'
+  >('default');
+
+  const {
+    image,
+    group,
+    name,
+    rate,
+    discount,
+    price,
+    mainProductInfo,
+    additionalInfo,
+    description,
+  } = product;
   const priceWithDiscount =
     discount > 0 ? (price * (1 - discount / 100)).toFixed(2) : null;
+
+  const onDescriptionButtonClick: React.MouseEventHandler<
+    HTMLButtonElement
+  > = e => {
+    if (!(e.target instanceof HTMLButtonElement)) {
+      return;
+    }
+    const value = e.target.dataset.payload as 'default' | 'additional';
+    setDescriptionButtton(value);
+  };
+
+  const onFormSubmit: React.FormEventHandler<HTMLFormElement> = e => {
+    e.preventDefault();
+    if (!(e.target instanceof HTMLFormElement)) {
+      return;
+    }
+    const htmlEl = e.target.elements[0];
+    if (htmlEl instanceof HTMLInputElement) console.log(htmlEl.value);
+
+    console.log(e.target.elements[0]);
+  };
   return (
     <Container className="modal">
       <>
@@ -29,14 +61,16 @@ export const ProductModal = ({ product }: TProps) => {
             <StarRate className="modal" rate={rate} />
             <div className="modal-product__price-box">
               {priceWithDiscount && (
-                <p className="modal-product__full-price">{price.toFixed(2)}</p>
+                <p className="modal-product__full-price">{`$${price.toFixed(
+                  2
+                )}`}</p>
               )}
               <p className="modal-product__sales-price">
-                {priceWithDiscount || price}
+                {`$${priceWithDiscount || price.toFixed(2)}`}
               </p>
             </div>
             <p className="modal-product__main-info">{mainProductInfo}</p>
-            <form className="modal-order-form">
+            <form onSubmit={onFormSubmit} className="modal-order-form">
               <label
                 htmlFor="product-quantity"
                 className="modal-order-controls-box__label"
@@ -46,10 +80,12 @@ export const ProductModal = ({ product }: TProps) => {
               <input
                 id="product-quantity"
                 type="number"
+                name="quantity"
                 min={1}
                 max={100}
                 defaultValue={1}
                 required
+                // disabled={true}
                 className="modal-order-controls-box__input"
               />
               <button
@@ -62,14 +98,28 @@ export const ProductModal = ({ product }: TProps) => {
           </div>
           <div className="modal__product-description-box">
             <div className="modal__buttons-box">
-              <button className="modal__descriotion-button">
+              <button
+                className={clsx('modal__descriotion-button', {
+                  activ: descriptionButtton === 'default',
+                })}
+                data-payload="default"
+                onClick={onDescriptionButtonClick}
+              >
                 Product Description
               </button>
-              <button className="modal__additional-button">
+              <button
+                className={clsx('modal__additional-button', {
+                  activ: descriptionButtton === 'additional',
+                })}
+                data-payload="additional"
+                onClick={onDescriptionButtonClick}
+              >
                 Additional Info
               </button>
             </div>
-            <p className="modal__descriotion-content">{descriotionContent}</p>
+            <p className="modal__descriotion-content">
+              {descriptionButtton === 'default' ? description : additionalInfo}
+            </p>
           </div>
         </div>
       </>

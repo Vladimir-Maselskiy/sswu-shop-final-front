@@ -13,7 +13,7 @@ type TProps = {
 export const Products = ({ products }: TProps) => {
   const [visibleProducts, setVisibleProducts] = useState<IProduct[]>([]);
   const [isShowWithDiscount, setIsShowWithDiscount] = useState(false);
-  const [isShowModal, setIsShowModal] = useState(true);
+  const [isShowModal, setIsShowModal] = useState(false);
 
   useEffect(() => {
     if (isShowWithDiscount) {
@@ -35,7 +35,7 @@ export const Products = ({ products }: TProps) => {
                 key={product._id}
                 product={product}
                 className="products"
-                // onClick={onProductCardClick}
+                setIsShowModal={setIsShowModal}
               />
             ))}
           </>

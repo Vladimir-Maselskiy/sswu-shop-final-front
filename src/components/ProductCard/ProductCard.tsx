@@ -4,14 +4,22 @@ import { StarRate } from '../StarRate/StarRate';
 type TProps = {
   className: string;
   product: IProduct;
+  setIsShowModal?: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-export const ProductCard = ({ className, product }: TProps) => {
+export const ProductCard = ({
+  className,
+  product,
+  setIsShowModal = () => {},
+}: TProps) => {
   const { group, image, name, price, discount, rate } = product;
   const priceWithDiscount =
     discount > 0 ? (price * (1 - discount / 100)).toFixed(2) : null;
   return (
-    <div className={`${className}__product-card`}>
+    <div
+      onClick={() => setIsShowModal(true)}
+      className={`${className}__product-card`}
+    >
       <p className="product-card__group">{group}</p>
       <img
         className="product-card__image"
