@@ -61,6 +61,32 @@
   background-color: $fifth-background-color;
 }
 
+.product__full-price {
+  position: relative;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 20px;
+  text-align: center;
+  margin-right: 8px;
+  color: $sixth-text-color;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -1px;
+    width: calc(100% + 2px);
+    height: 1px;
+    background-color: $sixth-text-color;
+  }
+}
+.product__sales-price {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.39;
+  text-align: center;
+  color: $first-accent-color;
+}
+
 .is-hidden {
   opacity: 0;
   visibility: hidden;

@@ -1,0 +1,98 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+@import '../../styles//base';
+
+.modal-section {
+  @extend .section;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.modal-container {
+  @extend .container;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 115px 260px 144px;
+  width: 100%;
+  background-color: red;
+}
+.modal__main-box {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-areas:
+    'image info '
+    'description description';
+}
+.modal__image-box {
+  grid-area: image;
+  position: relative;
+  aspect-ratio: 1/1;
+  width: 100%;
+  max-width: 600px;
+}
+
+.modal__image {
+  width: 100%;
+  height: 100%;
+}
+
+.modal__product-group {
+  position: absolute;
+  top: 38px;
+  left: 35px;
+  padding: 6px 12px;
+  color: $white-color;
+  background-color: $first-accent-color;
+  border-radius: 8px;
+  font-family: 'Open Sans';
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.33;
+}
+
+.modal__product-info-box {
+  grid-area: info;
+  padding-top: 106px;
+  padding-bottom: 106px;
+  width: 100%;
+}
+.modal-product__name {
+  @extend .section-message;
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.modal__star-rate-container {
+  margin-top: 9px;
+  & .modal__star-item {
+    width: 19px;
+    height: 18px;
+  }
+}
+
+.modal-product__price-box {
+  display: flex;
+  align-items: center;
+}
+
+.modal-product__full-price {
+  @extend .product__full-price;
+}
+
+.modal-product__sales-price {
+  @extend .product__sales-price;
+}
+
+.modal-product__main-info {
+  @extend .section-description;
+}
+.modal-order-form {
+  display: flex;
+}
+.modal__product-description-box {
+  grid-area: description;
+}

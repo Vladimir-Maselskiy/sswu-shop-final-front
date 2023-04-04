@@ -22,8 +22,8 @@ export const ProductCard = ({ className, product }: TProps) => {
       <div className="product-card__divider"></div>
       <div className="product-card__footer">
         <div className="product-card__price-box">
-          {!priceWithDiscount && (
-            <p className="product-card__full-price">{price}</p>
+          {priceWithDiscount && (
+            <p className="product-card__full-price">{price.toFixed(2)}</p>
           )}
           <p className="product-card__sales-price">
             {priceWithDiscount || price}

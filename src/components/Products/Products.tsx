@@ -3,6 +3,7 @@ import { IProduct } from '../../interfaces/interfaces';
 import { Box } from '../Box/Box';
 import { Container } from '../Container/Container';
 import { ProductCard } from '../ProductCard/ProductCard';
+import { ProductModal } from '../ProductModal/ProductModal';
 import './Products.scss';
 
 type TProps = {
@@ -12,6 +13,7 @@ type TProps = {
 export const Products = ({ products }: TProps) => {
   const [visibleProducts, setVisibleProducts] = useState<IProduct[]>([]);
   const [isShowWithDiscount, setIsShowWithDiscount] = useState(false);
+  const [isShowModal, setIsShowModal] = useState(true);
 
   useEffect(() => {
     if (isShowWithDiscount) {
@@ -33,10 +35,12 @@ export const Products = ({ products }: TProps) => {
                 key={product._id}
                 product={product}
                 className="products"
+                // onClick={onProductCardClick}
               />
             ))}
           </>
         </Box>
+        {isShowModal && <ProductModal product={products[0]} />}
       </>
     </Container>
   );
