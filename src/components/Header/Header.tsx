@@ -1,3 +1,4 @@
+import { IOrderItem } from '../../interfaces/interfaces';
 import { Box } from '../Box/Box';
 import { CartNav } from '../CartNav/CartNav';
 import { Container } from '../Container/Container';
@@ -6,7 +7,11 @@ import { Logo } from '../Logo/Logo';
 import { SearchBar } from '../SearchBar/SearchBar';
 import './Header.scss';
 
-export const Header = () => {
+type TProps = {
+  order: IOrderItem[];
+};
+
+export const Header = ({ order }: TProps) => {
   return (
     <Container className="header">
       <>
@@ -15,7 +20,7 @@ export const Header = () => {
         <Box className="header-right">
           <>
             <SearchBar />
-            <CartNav />
+            <CartNav order={order} />
           </>
         </Box>
       </>

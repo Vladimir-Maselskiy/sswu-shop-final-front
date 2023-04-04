@@ -9,21 +9,23 @@ import { Newsletter } from '../Newsletter/Newsletter';
 import { Offer } from '../Offer/Offer';
 import { OfferBanner } from '../OfferBanner/OfferBanner';
 import { Products } from '../Products/Products';
-import { IProduct } from '../../interfaces/interfaces';
+import { IOrderItem, IProduct } from '../../interfaces/interfaces';
 
 type TProps = {
   products: IProduct[];
+
+  setOrder: React.Dispatch<React.SetStateAction<IOrderItem[]>>;
 };
 
-export const MainPage = ({ products }: TProps) => {
+export const MainPage = ({ products, setOrder }: TProps) => {
   return (
     <>
       <Banner />
       <OfferBanner />
       <About />
-      <Products products={products}/>
+      <Products products={products} setOrder={setOrder} />
       <FeedBacks />
-      <Offer products={products}/>
+      <Offer products={products} />
       <EcoFriendly />
       <Gallery />
       <Blog />

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { IProduct } from '../../interfaces/interfaces';
+import { IOrderItem, IProduct } from '../../interfaces/interfaces';
 import { Box } from '../Box/Box';
 import { Container } from '../Container/Container';
 import { ProductCard } from '../ProductCard/ProductCard';
@@ -8,9 +8,10 @@ import './Products.scss';
 
 type TProps = {
   products: IProduct[];
+  setOrder: React.Dispatch<React.SetStateAction<IOrderItem[]>>;
 };
 
-export const Products = ({ products }: TProps) => {
+export const Products = ({ products, setOrder }: TProps) => {
   const [visibleProducts, setVisibleProducts] = useState<IProduct[]>([]);
   const [isShowWithDiscount, setIsShowWithDiscount] = useState(false);
   const [isShowModal, setIsShowModal] = useState(false);
@@ -46,6 +47,7 @@ export const Products = ({ products }: TProps) => {
           <ProductModal
             product={currentProduct}
             setIsShowModal={setIsShowModal}
+            setOrder={setOrder}
           />
         )}
       </>

@@ -13,3 +13,8 @@ export interface IProduct {
   createdAt: string;
   updatedAt: string;
 }
+
+export interface IOrderItem {
+  product: IProduct;
+  quantity: number;
+}

@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import React, { useEffect, useState } from 'react';
-import { IProduct } from '../../interfaces/interfaces';
+import { IOrderItem, IProduct } from '../../interfaces/interfaces';
 import { Container } from '../Container/Container';
 import { StarRate } from '../StarRate/StarRate';
 import './ProductModal.scss';
@@ -8,9 +8,10 @@ import './ProductModal.scss';
 type TProps = {
   product: IProduct | null;
   setIsShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+  setOrder: React.Dispatch<React.SetStateAction<IOrderItem[]>>;
 };
 
-export const ProductModal = ({ product, setIsShowModal }: TProps) => {
+export const ProductModal = ({ product, setIsShowModal, setOrder }: TProps) => {
   const [descriptionButtton, setDescriptionButtton] = useState<
     'default' | 'additional'
   >('default');
@@ -44,18 +45,9 @@ export const ProductModal = ({ product, setIsShowModal }: TProps) => {
     price = 0,
     mainProductInfo,
     additionalInfo,
-    description;
-  //     if (product) {
-  //        const  {image, group,
-  //     name,
-  //     rate,
-  //     discount,
-  //     price,
-  //     mainProductInfo,
-  //     additionalInfo,
-  //     description
-  // } = product
-  // }
+    description,
+    _id = '';
+
   if (product) {
     ({
       image,
@@ -67,6 +59,7 @@ export const ProductModal = ({ product, setIsShowModal }: TProps) => {
       mainProductInfo,
       additionalInfo,
       description,
+      _id,
     } = product);
   }
   const priceWithDiscount =
@@ -84,11 +77,23 @@ export const ProductModal = ({ product, setIsShowModal }: TProps) => {
 
   const onFormSubmit: React.FormEventHandler<HTMLFormElement> = e => {
     e.preventDefault();
-    if (!(e.target instanceof HTMLFormElement)) {
+    if (!(e.target instanceof HTMLFormElement) || !product) {
       return;
     }
     const htmlEl = e.target.elements[0];
-    if (htmlEl instanceof HTMLInputElement) console.log(htmlEl.value);
+    if (htmlEl instanceof HTMLInputElement) {
+      const value = +htmlEl.value;
+      setOrder(prev => {
+        const currentIndex = prev.findIndex(item => item.product._id === _id);
+        if (currentIndex === -1) {
+          prev.push({ product, quantity: value });
+          return [...prev];
+        } else {
+          prev[currentIndex].quantity += value;
+          return [...prev];
+        }
+      });
+    }
   };
 
   const onCloseButtonClick = () => {
