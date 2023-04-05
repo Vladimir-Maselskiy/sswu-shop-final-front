@@ -63,7 +63,7 @@ export const CartContent = ({ order, setOrder }: TProps) => {
     );
     const totalCost = getTotalCost(order);
     const discount = getOrderDiscount(order);
-    // fetchNewOrderToDB(user, orderItems, totalCost, discount);
+    fetchNewOrderToDB(user, orderItems, totalCost, discount);
     if (ref.current) ref.current.style.backgroundColor = '#EFD372';
     setTimeout(() => {
       navigate('/thank-page');

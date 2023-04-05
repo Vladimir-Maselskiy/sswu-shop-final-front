@@ -31,3 +31,12 @@ export const fetchNewOrderToDB = async (
     console.log(error);
   }
 };
+
+export const fetchOrders = async () => {
+  try {
+    const res = await fetch(`${API}/orders`).then(res => res.json());
+    return res;
+  } catch (error) {
+    console.log(error);
+  }
+};

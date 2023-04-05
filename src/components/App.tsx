@@ -9,6 +9,7 @@ import './App.scss';
 import { fetchProducts } from '../utils/api';
 import { ThankPage } from '../pages/ThankPage/ThankPage';
 import { NotFound } from '../pages/NotFound/NotFound';
+import { Orders } from '../pages/Orders/Orders';
 
 function App() {
   const [products, setProducts] = useState<IProduct[]>([]);
@@ -39,6 +40,7 @@ function App() {
           path="/thank-page"
           element={<ThankPage setOrder={setOrder} />}
         ></Route>
+        <Route path="/orders" element={<Orders />}></Route>
         <Route path="/*" element={<NotFound />}></Route>
       </Routes>
 

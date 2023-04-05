@@ -1,4 +1,5 @@
 @import '../../styles/variables';
+@import '../../styles/mixins';
 @import '../../styles//base';
 
 .thank-page-section {
@@ -18,6 +19,7 @@
 }
 
 .thank-page__banner {
+  position: relative;
   margin-top: 44px;
   background: url('../../images/thank-page-banner-bg.jpg');
   max-height: 450px;
@@ -25,6 +27,14 @@
   width: 100%;
   background-size: cover;
   background-position: center;
+}
+
+.thank-page__get-all-orders-button {
+  @include getButtonWithArrow($first-accent-color, $white-color);
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 940px) {

@@ -1,0 +1,10 @@
+@import '../../styles/variables';
+@import '../../styles//base';
+
+.orders-section {
+  @extend .section;
+}
+
+.orders-container {
+  @extend .container;
+}
