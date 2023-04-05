@@ -16,6 +16,8 @@ export const ProductModal = ({ product, setIsShowModal, setOrder }: TProps) => {
     'default' | 'additional'
   >('default');
 
+  const [isSubmitButtonDisabled, setIsSubmitButtonDisabled] = useState(false);
+
   const onBackDropClick = (e: any) => {
     if (e.target instanceof HTMLDivElement) {
       if (e.target.classList.value === 'modal-section') {
@@ -93,6 +95,7 @@ export const ProductModal = ({ product, setIsShowModal, setOrder }: TProps) => {
         localStorage.setItem('cart', JSON.stringify(prev));
         return [...prev];
       });
+      setIsSubmitButtonDisabled(true);
     }
   };
 
@@ -141,12 +144,13 @@ export const ProductModal = ({ product, setIsShowModal, setOrder }: TProps) => {
                   max={100}
                   defaultValue={1}
                   required
-                  // disabled={true}
+                  disabled={isSubmitButtonDisabled}
                   className="modal-order-controls-box__input"
                 />
                 <button
                   type="submit"
                   className="modal-order-controls-box__submit"
+                  disabled={isSubmitButtonDisabled}
                 >
                   Add To Card
                 </button>

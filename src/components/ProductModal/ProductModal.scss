@@ -122,8 +122,9 @@
   padding-bottom: 26px;
   border: 2px solid $first-accent-color;
   border-radius: 16px;
+  transition: color 0.3s;
   &:disabled {
-    opacity: 0.4;
+    color: #274c5b67;
   }
   &:focus {
     outline: none;
@@ -135,6 +136,10 @@
   min-width: 229px;
   font-size: 20px;
   margin-top: 0;
+  transition: background-color 0.3s;
+  &:disabled {
+    background-color: $third-background-color;
+  }
 }
 .modal__product-description-box {
   grid-area: description;

@@ -1,0 +1,13 @@
+@import '../../styles/variables';
+@import '../../styles//base';
+
+.cart-price {
+  @extend .section-message;
+  margin-left: auto;
+  margin-top: 20px;
+  width: 443px;
+  font-size: 40px;
+  & span {
+    margin-left: 5px;
+  }
+}

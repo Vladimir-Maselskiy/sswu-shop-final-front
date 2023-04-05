@@ -18,3 +18,19 @@ export interface IOrderItem {
   product: IProduct;
   quantity: number;
 }
+export interface IUser {
+  name: string;
+  email: string;
+  address: string;
+  phone: string;
+  message: string;
+}
+export interface IOrderItems {
+  productId: string;
+  name: string;
+  image: string;
+  price: number;
+  discount: number;
+  rate: number;
+  quantity: number;
+}

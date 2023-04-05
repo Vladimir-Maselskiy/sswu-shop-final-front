@@ -4,6 +4,7 @@
 .cart-item {
   display: flex;
   align-items: center;
+  margin-top: 20px;
 }
 .cart-item__text-box {
   display: flex;
@@ -37,6 +38,7 @@
 
 .cart-item__controls-fields-box {
   margin-left: auto;
+  width: 443px;
 }
 
 .cart-item__label {
@@ -55,7 +57,7 @@
   }
 }
 
-.cart-close-button {
+.cart-item__remove-button {
   color: $white-color;
   padding: 11px 26px;
   background-color: $first-accent-color;
