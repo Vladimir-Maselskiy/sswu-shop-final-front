@@ -1,5 +1,5 @@
-@import '../../styles/variables';
-@import '../../styles//base';
+@import '../../../styles/variables';
+@import '../../../styles//base';
 
 .cart-banner-section {
   @extend .section;
@@ -10,8 +10,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url('../../images/cart-banner-pattern.png'),
-    url('../../images/cart-banner.png');
+  background: url('../../../images/cart-banner-pattern.png'),
+    url('../../../images/cart-banner.png');
   background-size: cover;
   height: 450px;
 }

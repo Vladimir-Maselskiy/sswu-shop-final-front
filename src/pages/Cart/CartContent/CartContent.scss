@@ -1,6 +1,6 @@
-@import '../../styles/variables';
-@import '../../styles/mixins';
-@import '../../styles//base';
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+@import '../../../styles//base';
 
 .cart-content-section {
   @extend .section;
@@ -79,6 +79,7 @@
   border: none;
   border-radius: 16px;
   cursor: pointer;
+  transition: backgrond-color 0.3s;
 }
 
 @media screen and (max-width: 620px) {

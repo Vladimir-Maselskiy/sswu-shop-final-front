@@ -3,10 +3,11 @@ import { Route, Routes } from 'react-router-dom';
 import { Footer } from './Footer/Footer';
 import { Header } from './Header/Header';
 import { MainPage } from './MainPage/MainPage';
-import { Cart } from './Cart/Cart';
+import { Cart } from '../pages/Cart/Cart/Cart';
 import { IOrderItem, IProduct } from '../interfaces/interfaces';
 import './App.scss';
 import { fetchProducts } from '../utils/api';
+import { ThankPage } from '../pages/ThankPage/ThankPage';
 
 function App() {
   const [products, setProducts] = useState<IProduct[]>([]);
@@ -32,6 +33,10 @@ function App() {
         <Route
           path="/cart"
           element={<Cart order={order} setOrder={setOrder} />}
+        ></Route>
+        <Route
+          path="/thank-page"
+          element={<ThankPage setOrder={setOrder} />}
         ></Route>
       </Routes>
 

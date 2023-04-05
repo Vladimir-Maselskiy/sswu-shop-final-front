@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { IOrderItem } from '../../interfaces/interfaces';
+import { IOrderItem } from '../../../interfaces/interfaces';
 import './CartNav.scss';
 
 type TProps = {

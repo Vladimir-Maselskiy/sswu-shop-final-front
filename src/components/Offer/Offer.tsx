@@ -10,7 +10,7 @@ type TProps = {
 };
 
 export const Offer = ({ products }: TProps) => {
-  const [visibleProducts, setVisibleProducts] = useState<IProduct[]>([]);
+  const visibleProducts = products.slice(0, 4);
   return (
     <Container className="offer">
       <>

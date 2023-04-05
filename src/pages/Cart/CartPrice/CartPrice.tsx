@@ -1,7 +1,7 @@
 import React from 'react';
-import { IOrderItem } from '../../interfaces/interfaces';
-import { getOrderDiscount } from '../../utils/getOrderDiscount';
-import { getTotalCost } from '../../utils/getTotalCost';
+import { IOrderItem } from '../../../interfaces/interfaces';
+import { getOrderDiscount } from '../../../utils/getOrderDiscount';
+import { getTotalCost } from '../../../utils/getTotalCost';
 import './CartPrice.scss';
 
 type TProps = {

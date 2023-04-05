@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
-import { IOrderItem, IUser } from '../../interfaces/interfaces';
-import { fetchNewOrderToDB } from '../../utils/api';
-import { getOrderDiscount } from '../../utils/getOrderDiscount';
-import { getTotalCost } from '../../utils/getTotalCost';
+import React, { useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Container } from '../../../components/Container/Container';
+import { IOrderItem, IUser } from '../../../interfaces/interfaces';
+import { fetchNewOrderToDB } from '../../../utils/api';
+import { getOrderDiscount } from '../../../utils/getOrderDiscount';
+import { getTotalCost } from '../../../utils/getTotalCost';
 import { CartItem } from '../CartItem/CartItem';
 import { CartPrice } from '../CartPrice/CartPrice';
-import { Container } from '../Container/Container';
 import './CartContent.scss';
 
 type TProps = {
@@ -14,6 +15,8 @@ type TProps = {
 };
 export const CartContent = ({ order, setOrder }: TProps) => {
   const [isInOrderPage, setIsInOrderPage] = useState(false);
+  const ref = useRef<HTMLButtonElement>(null);
+  const navigate = useNavigate();
 
   const onToOrderButtonClick = () => {
     if (!isInOrderPage) {
@@ -60,7 +63,11 @@ export const CartContent = ({ order, setOrder }: TProps) => {
     );
     const totalCost = getTotalCost(order);
     const discount = getOrderDiscount(order);
-    fetchNewOrderToDB(user, orderItems, totalCost, discount);
+    // fetchNewOrderToDB(user, orderItems, totalCost, discount);
+    if (ref.current) ref.current.style.backgroundColor = '#EFD372';
+    setTimeout(() => {
+      navigate('/thank-page');
+    }, 1000);
   };
 
   return (
@@ -132,7 +139,7 @@ export const CartContent = ({ order, setOrder }: TProps) => {
                     required
                   ></textarea>
                 </div>
-                <button type="submit" className="submit-order-button">
+                <button type="submit" className="submit-order-button" ref={ref}>
                   Comfirm
                 </button>
               </form>

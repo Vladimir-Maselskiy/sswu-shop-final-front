@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { IOrderItem } from '../../interfaces/interfaces';
+import { IOrderItem } from '../../../interfaces/interfaces';
 import './CartItem.scss';
 
 type TProps = {

@@ -1,8 +1,8 @@
 import React from 'react';
-import { IOrderItem } from '../../interfaces/interfaces';
+import { IOrderItem } from '../../../interfaces/interfaces';
 import { CartBanner } from '../CartBanner/CartBanner';
+import { Container } from '../../../components/Container/Container';
 import { CartContent } from '../CartContent/CartContent';
-import { Container } from '../Container/Container';
 
 type TProps = {
   order: IOrderItem[];

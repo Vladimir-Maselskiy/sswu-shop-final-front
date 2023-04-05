@@ -1,0 +1,39 @@
+@import '../../styles/variables';
+@import '../../styles//base';
+
+.thank-page-section {
+  @extend .section;
+}
+
+.thank-page-container {
+  @extend .container;
+  position: relative;
+}
+
+.thank-page__title {
+  @extend .section-message;
+  text-align: center;
+  font-size: 70px;
+  padding: 0;
+}
+
+.thank-page__banner {
+  margin-top: 44px;
+  background: url('../../images/thank-page-banner-bg.jpg');
+  max-height: 450px;
+  height: 450px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+@media screen and (max-width: 940px) {
+  .thank-page__title {
+    font-size: 50px;
+  }
+}
+@media screen and (max-width: 670px) {
+  .thank-page__title {
+    font-size: 30px;
+  }
+}
