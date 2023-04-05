@@ -1,5 +1,5 @@
 import { IOrderItems, IUser } from '../interfaces/interfaces';
-const API = 'http://localhost:3000/api';
+const API = 'https://sswu-shop-final-back-deploy.onrender.com/api';
 export const fetchProducts = async () => {
   try {
     const res = await fetch(`${API}/products`).then(res => res.json());
@@ -21,8 +21,8 @@ export const fetchNewOrderToDB = async (
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        body: JSON.stringify(data),
       },
+      body: JSON.stringify(data),
     };
     const res = await fetch(`${API}/orders`, params).then(res => res.json());
 

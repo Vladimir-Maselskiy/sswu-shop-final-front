@@ -80,3 +80,18 @@
   border-radius: 16px;
   cursor: pointer;
 }
+
+@media screen and (max-width: 620px) {
+  .cart-content__user-form {
+    & > div {
+      width: 100%;
+      max-width: 100%px;
+      &:nth-child(even) {
+        margin-left: auto;
+      }
+      &:not(:last-child) {
+        width: 100%;
+      }
+    }
+  }
+}

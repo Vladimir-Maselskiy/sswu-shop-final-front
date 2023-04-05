@@ -42,22 +42,23 @@ export const CartItem = ({ item, setOrder }: TProps) => {
     <div className="cart-item">
       <img src={`../products${image}`} className="cart-item__image" />
       <div className="cart-item__text-box">
-        <p className="cart-item__name">{name}</p>
-        {priceWithDiscount && (
-          <p className="cart-item__full-price">{`$${price.toFixed(2)}`}</p>
-        )}
-        <p className="cart-item__sales-price">
-          {`$${priceWithDiscount || price.toFixed(2)}`}
-        </p>
+        <div className='cart-item__name-and-price'>
+          <p className="cart-item__name">{name}</p>
+          {priceWithDiscount && (
+            <p className="cart-item__full-price">{`$${price.toFixed(2)}`}</p>
+          )}
+          <p className="cart-item__sales-price">
+            {`$${priceWithDiscount || price.toFixed(2)}`}
+          </p>
+        </div>
         <div className="cart-item__controls-fields-box">
           <label htmlFor={`${_id}`} className="cart-item__label">
             Quantity :
           </label>
           <input
-            // type="text"
+            className="cart-item__input"
             id={`${_id}`}
             value={inputValue}
-            className="cart-item__input"
             onChange={onInputChange}
             onBlur={e => onInputBlur(e, _id)}
           />
