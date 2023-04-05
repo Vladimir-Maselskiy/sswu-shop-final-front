@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import { useEffect, useRef } from 'react';
+import { NavLink } from 'react-router-dom';
 import { useWindowWidth } from '../../hooks/getWindowWidth';
 import './HeaderNav.scss';
 
@@ -35,7 +36,7 @@ export const HeaderNav = () => {
               'styled-arrow': item === 'Pages',
             })}
           >
-            <a href="/">{item}</a>
+            <NavLink to="/">{item}</NavLink>
           </li>
         ))}
       </ul>

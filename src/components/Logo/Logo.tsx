@@ -1,5 +1,10 @@
+import { NavLink } from 'react-router-dom';
 import './Logo.scss';
 
 export const Logo = () => {
-  return <div className="header-logo"></div>;
+  return (
+    <NavLink to="/">
+      <div className="header-logo"></div>
+    </NavLink>
+  );
 };

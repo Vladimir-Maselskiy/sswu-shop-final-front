@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { IOrderItem } from '../../interfaces/interfaces';
 import './CartNav.scss';
 
@@ -12,12 +12,13 @@ export const CartNav = ({ order }: TProps) => {
     0
   );
 
-  const navigate = useNavigate();
   return (
-    <div className="header-cart" onClick={() => navigate('/cart')}>
-      <p className="header-cart__title">Cart{` (${quantity})`}</p>
-      <p className="header-cart__badge">{quantity}</p>
-      <div className="header-cart__icon"></div>
-    </div>
+    <NavLink to="/cart">
+      <div className="header-cart">
+        <p className="header-cart__title">Cart{` (${quantity})`}</p>
+        <p className="header-cart__badge">{quantity}</p>
+        <div className="header-cart__icon"></div>
+      </div>
+    </NavLink>
   );
 };

@@ -14,6 +14,13 @@ function App() {
   useEffect(() => {
     fetchProducts().then(res => setProducts(res));
   }, []);
+
+  useEffect(() => {
+    const cart = localStorage.getItem('cart');
+    if (cart) {
+      setOrder(JSON.parse(cart));
+    }
+  }, []);
   return (
     <>
       <Header order={order} />
