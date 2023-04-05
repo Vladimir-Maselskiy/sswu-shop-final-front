@@ -87,11 +87,11 @@ export const ProductModal = ({ product, setIsShowModal, setOrder }: TProps) => {
         const currentIndex = prev.findIndex(item => item.product._id === _id);
         if (currentIndex === -1) {
           prev.push({ product, quantity: value });
-          return [...prev];
         } else {
           prev[currentIndex].quantity += value;
-          return [...prev];
         }
+        localStorage.setItem('cart', JSON.stringify(prev));
+        return [...prev];
       });
     }
   };
