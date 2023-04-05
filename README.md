@@ -15,6 +15,19 @@ Clone the repository: git clone [https://github.com/Vladimir-Maselskiy/sswu-shop
     
 Otherwise, you can not install the project on the local machine, but simply follow the link to vercel https://sswu-shop-final-front.vercel.app
 
+This is a front end part of project and the code of back end part you can find here: https://github.com/Vladimir-Maselskiy/sswu-shop-final-back.
+
+Back end is deployed on host "onrender" without payment, and  the first request may to take some time, until the server "wakes up". Please, wait for an answer). Subsequent requests will be faster.
+
+## Used stack:
+- React
+- TypeScript
+- React Route
+- Sass
+- Node
+- Express
+- Mongoose
+
 
 
 
