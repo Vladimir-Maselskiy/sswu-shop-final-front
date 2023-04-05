@@ -1,5 +1,5 @@
 import { IOrderItem } from '../../interfaces/interfaces';
-import { CartNav } from '../../pages/Cart/CartNav/CartNav';
+import { CartNav } from '../CartNav/CartNav';
 import { Box } from '../Box/Box';
 import { Container } from '../Container/Container';
 import { HeaderNav } from '../HeaderNav/HeaderNav';
