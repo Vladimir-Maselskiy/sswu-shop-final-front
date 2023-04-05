@@ -1,0 +1,60 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+@import '../../styles//base';
+
+.not-found-section {
+  @extend .section;
+}
+
+.not-found-container {
+  @extend .container;
+  position: relative;
+  background: url('../../images/not-found-banner-bg.png');
+  max-height: 898px;
+  background-size: cover;
+  padding: 0;
+}
+
+.not-found-info {
+  width: 27%;
+  position: absolute;
+  top: 23%;
+  right: 14%;
+}
+.not-found-info__image404 {
+  width: 100%;
+}
+
+.not-found-info__message {
+  @extend .section-message;
+  font-size: 70px;
+  white-space: nowrap;
+}
+.not-found-info__description {
+  @extend .section-description;
+}
+.not-found-info__button {
+  @include getButtonWithArrow($first-accent-color, $white-color);
+  min-width: 275px;
+}
+
+@media screen and (max-width: 1440px) {
+  .not-found-info__message {
+    font-size: 50px;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .not-found-info__message {
+    font-size: 40px;
+  }
+  .not-found-info {
+    top: 13%;
+  }
+}
+
+@media screen and (max-width: 790px) {
+  .not-found-info {
+    right: 70%;
+    transform: translateX(50%);
+  }
+}

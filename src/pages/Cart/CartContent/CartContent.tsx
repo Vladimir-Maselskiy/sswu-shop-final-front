@@ -94,7 +94,7 @@ export const CartContent = ({ order, setOrder }: TProps) => {
                     id="user-name"
                     name="name"
                     type="text"
-                    pattern="^[A-Z][a-z]*$"
+                    pattern="^[A-Z][a-z]+(\s[A-Z][a-z]+)*$"
                     placeholder="Your Full Name"
                     required
                   ></input>
