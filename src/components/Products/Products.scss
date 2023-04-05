@@ -39,6 +39,12 @@
   background-color: $third-text-color;
 }
 
+.products__filter-button {
+  @include getButtonWithArrow($first-accent-color, $white-color);
+  display: block;
+  margin: 86px auto 0;
+}
+
 @media screen and (max-width: 1920px) {
   .products-container {
     padding-left: 160px;

@@ -13,7 +13,7 @@ type TProps = {
 
 export const Products = ({ products, setOrder }: TProps) => {
   const [visibleProducts, setVisibleProducts] = useState<IProduct[]>([]);
-  const [isShowWithDiscount, setIsShowWithDiscount] = useState(false);
+  const [isShowWithDiscount, setIsShowWithDiscount] = useState(true);
   const [isShowModal, setIsShowModal] = useState(false);
   const [currentProduct, setCurrentProduct] = useState<IProduct | null>(null);
 
@@ -24,6 +24,11 @@ export const Products = ({ products, setOrder }: TProps) => {
       );
     } else setVisibleProducts(products);
   }, [isShowWithDiscount, products]);
+
+  const onFilterButtonClick = () => {
+    setIsShowWithDiscount(prev => !prev);
+    console.log('click');
+  };
 
   return (
     <Container className="products">
@@ -43,6 +48,13 @@ export const Products = ({ products, setOrder }: TProps) => {
             ))}
           </>
         </Box>
+        <button
+          className="products__filter-button"
+          type="button"
+          onClick={onFilterButtonClick}
+        >
+          {isShowWithDiscount ? 'Load More' : 'Hide All'}
+        </button>
         {isShowModal && (
           <ProductModal
             product={currentProduct}
