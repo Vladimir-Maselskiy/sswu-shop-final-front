@@ -11,5 +11,10 @@ Clone the repository: git clone [https://github.com/Vladimir-Maselskiy/sswu-shop
     Navigate into the project directory: cd sswu-shop-final-front
     Install dependencies: npm install
     Start the development server: npm start
+    
+    
+Otherwise, you can not install the project on the local machine, but simply follow the link to vercel https://sswu-shop-final-front.vercel.app
+
+
 
 
