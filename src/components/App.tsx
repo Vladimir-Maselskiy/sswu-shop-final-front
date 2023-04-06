@@ -14,6 +14,8 @@ import { Orders } from '../pages/Orders/Orders';
 function App() {
   const [products, setProducts] = useState<IProduct[]>([]);
   const [order, setOrder] = useState<IOrderItem[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     fetchProducts().then(res => setProducts(res));
   }, []);

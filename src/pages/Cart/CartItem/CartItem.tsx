@@ -40,7 +40,7 @@ export const CartItem = ({ item, setOrder }: TProps) => {
   };
   return (
     <div className="cart-item">
-      <img src={`../products${image}`} className="cart-item__image" />
+      <img src={`../products${image}`} className="cart-item__image" alt={name}/>
       <div className="cart-item__text-box">
         <div className='cart-item__name-and-price'>
           <p className="cart-item__name">{name}</p>
