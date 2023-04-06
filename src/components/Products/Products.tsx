@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 import { IOrderItem, IProduct } from '../../interfaces/interfaces';
 import { Box } from '../Box/Box';
 import { Container } from '../Container/Container';
@@ -9,9 +11,10 @@ import './Products.scss';
 type TProps = {
   products: IProduct[];
   setOrder: React.Dispatch<React.SetStateAction<IOrderItem[]>>;
+  isLoading: boolean;
 };
 
-export const Products = ({ products, setOrder }: TProps) => {
+export const Products = ({ products, setOrder, isLoading }: TProps) => {
   const [visibleProducts, setVisibleProducts] = useState<IProduct[]>([]);
   const [isShowWithDiscount, setIsShowWithDiscount] = useState(true);
   const [isShowModal, setIsShowModal] = useState(false);
@@ -37,15 +40,28 @@ export const Products = ({ products, setOrder }: TProps) => {
         <p className="products__message">Our Products</p>
         <Box className="products-cards">
           <>
-            {visibleProducts.map(product => (
-              <ProductCard
-                key={product._id}
-                product={product}
-                className="products"
-                setIsShowModal={setIsShowModal}
-                setCurrentProduct={setCurrentProduct}
-              />
-            ))}
+            {!isLoading
+              ? visibleProducts.map(product => (
+                  <ProductCard
+                    key={product._id}
+                    product={product}
+                    className="products"
+                    setIsShowModal={setIsShowModal}
+                    setCurrentProduct={setCurrentProduct}
+                  />
+                ))
+              : new Array(8)
+                  .fill(null)
+                  .map((_, index) => (
+                    <Skeleton
+                      key={index}
+                      style={{
+                        minHeight: 455,
+                        minWidth: 335,
+                        borderRadius: 30,
+                      }}
+                    />
+                  ))}
           </>
         </Box>
         <button

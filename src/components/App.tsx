@@ -17,7 +17,10 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetchProducts().then(res => setProducts(res));
+    fetchProducts().then(res => {
+      setProducts(res);
+      setIsLoading(false)
+    });
   }, []);
 
   useEffect(() => {
@@ -32,7 +35,7 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<MainPage products={products} setOrder={setOrder} />}
+          element={<MainPage products={products} setOrder={setOrder} isLoading={isLoading}/>}
         ></Route>
         <Route
           path="/cart"

@@ -13,19 +13,19 @@ import { IOrderItem, IProduct } from '../../interfaces/interfaces';
 
 type TProps = {
   products: IProduct[];
-
   setOrder: React.Dispatch<React.SetStateAction<IOrderItem[]>>;
+  isLoading: boolean;
 };
 
-export const MainPage = ({ products, setOrder }: TProps) => {
+export const MainPage = ({ products, setOrder, isLoading }: TProps) => {
   return (
     <>
       <Banner />
       <OfferBanner />
       <About />
-      <Products products={products} setOrder={setOrder} />
+      <Products products={products} setOrder={setOrder} isLoading={isLoading} />
       <FeedBacks />
-      <Offer products={products} />
+      <Offer products={products} isLoading={isLoading} />
       <EcoFriendly />
       <Gallery />
       <Blog />
